@@ -10,7 +10,7 @@ static void	check_f(int *f_type, double d, int sz)
 		f_type[5] = 0;
 	if (f_type[4] && f_type[5] <= 0)
 		f_type[5] = 1;
-	if (f_type[3] || d < 0)
+	if (f_type[3] || ch_neg(d))
 		f_type[5]--;
 	if (f_type[5] < 0)
 		f_type[1] = 0;

@@ -19,6 +19,8 @@ int			check_ul_precision(int *f_type, uintmax_t d)
 	sz = len_ul(d);
 	if (f_type[3])
 		f_type[4] = 0;
+	if (f_type[11] == 0 && d == 0)
+		f_type[2] = 0;
 	if (f_type[11] != -1)
 		f_type[1] = 0;
 	if (f_type[11] > sz && (++f) > 0)

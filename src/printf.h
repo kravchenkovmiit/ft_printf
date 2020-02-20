@@ -60,6 +60,7 @@ int				fill_w_char(int *f_type, int neg, int f_plus, char f);
 int				check_f_space(int *f_type, int neg);
 int				check_f_plus(int *f_type, int neg);
 int				check_f_hash(int *f_type, char f);
+int				check_mnh(int *f_type, char c);
 int				check_neg(int *f_type, int neg);
 int				check_precision(int *f_type, intmax_t d);
 int				check_ul_precision(int *f_type, uintmax_t d);

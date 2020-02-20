@@ -19,6 +19,8 @@ int			check_precision(int *f_type, intmax_t d)
 	sz = len(d);
 	if (f_type[3])
 		f_type[4] = 0;
+	if (f_type[11] == 0 && d == 0 && !f_type[3])
+		f_type[2] = 0;
 	if (f_type[11] != -1)
 		f_type[1] = 0;
 	if (f_type[11] > sz && (++f) > 0)

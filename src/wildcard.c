@@ -7,6 +7,13 @@ int		check_wildcard(int *f_type)
 	return (1);
 }
 
+int		check_mnh(int *f_type, char c)
+{
+	if (!f_type[0] || c != 'o')
+		f_type[2] = 0;
+	return (1);
+}
+
 void	check_f_asterix(va_list args, int *f_type)
 {
 	if (f_type[12])

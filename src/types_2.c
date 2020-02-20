@@ -9,7 +9,7 @@ int		check_precision_un(int *f_type, char *s, int hash, char conv)
 	sz = ft_strlen(s);
 	if (s[0] == '0' && sz == 1)
 	{
-		if (f_type[11] == 0 && conv == 'o' && f_type[0])
+		if (f_type[11] == 0 && check_mnh(f_type, conv) && conv == 'o' && f_type[0])
 			f_type[11]++;
 		f_type[0] = 0;
 	}
