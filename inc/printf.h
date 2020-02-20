@@ -1,6 +1,7 @@
 #ifndef PRINTF_H
 # define PRINTF_H
 
+# include <stdio.h>   // DELETE
 # include <stdint.h>
 # include <stdarg.h>
 # include <unistd.h>
@@ -59,13 +60,15 @@ int				fill_w_char(int *f_type, int neg, int f_plus, char f);
 int				check_f_space(int *f_type, int neg);
 int				check_f_plus(int *f_type, int neg);
 int				check_f_hash(int *f_type, char f);
+int				check_mnh(int *f_type, char c);
 int				check_neg(int *f_type, int neg);
 int				check_precision(int *f_type, intmax_t d);
 int				check_ul_precision(int *f_type, uintmax_t d);
 int				len(intmax_t num);
-char			*d_to_o(intmax_t dig);
-char			*d_to_x(intmax_t dig);
-char			*d_to_X(intmax_t dig);
+int				len_ul(uintmax_t num);
+char			*d_to_o(uintmax_t dig);
+char			*d_to_x(uintmax_t dig);
+char			*d_to_X(uintmax_t dig);
 int				put_converted_num(char *s, int *f_type, char conv);
 
 /*
@@ -80,6 +83,7 @@ t_float			*get_fdb(double d);
 char			*s_division(char **s);
 char			*add_int(char **s1, char *s2, int f);
 char			*add_frac(char **s1, char *s2);
+int				ch_neg(double d);
 
 /*
 ** Float_L
@@ -87,5 +91,6 @@ char			*add_frac(char **s1, char *s2);
 
 char			*handle_lmantissa(t_lfloat *fdb);
 t_lfloat		*get_lfdb(long double d);
+int				ch_lneg(long double d);
 
 #endif
