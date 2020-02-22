@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   float.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:43:40 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:24:40 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 static void	check_f(int *f_type, double d, int sz)
@@ -48,11 +60,11 @@ static char	*dbtostr(double d)
 
 static int	get_round(char **res, int ilen, int prec, int extra_one)
 {
- 	if (prec == 0)
- 		++ilen;
-	if (ilen < (int )ft_strlen(*res))
+	if (prec == 0)
+		++ilen;
+	if (ilen < (int)ft_strlen(*res))
 	{
- 		if (ilen > 0 && (*res)[ilen] >= '5' && (*res)[ilen--] <= '9')
+		if (ilen > 0 && (*res)[ilen] >= '5' && (*res)[ilen--] <= '9')
 		{
 			if ((*res)[ilen] == '.')
 				ilen--;
@@ -103,7 +115,7 @@ int			f_type(va_list args, int *f_t)
 	double	d;
 	int		sz;
 	int		neg;
-	char 	*res;
+	char	*res;
 
 	if (f_t[11] == -1)
 		f_t[11] = 6;

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   convert_float.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:41:59 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:37:09 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 static char	*handle_mantissa_if_e_less_zero(t_float *fdb)
 {
 	char	*res;
 
-	if(!(res = ft_joinstr_pf(fdb->mantissa, '0', -(fdb->exp))))
+	if (!(res = ft_joinstr_pf(fdb->mantissa, '0', -(fdb->exp))))
 		return (NULL);
 	res[1] = '.';
 	res[-(fdb->exp) + 1] = '1';

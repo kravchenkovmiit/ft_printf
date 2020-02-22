@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   convert.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:43:07 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:36:34 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 int		put_converted_num(char *s, int *f_type, char conv)
@@ -5,7 +17,6 @@ int		put_converted_num(char *s, int *f_type, char conv)
 	int i;
 	int f;
 
-	// DELITE
 	conv += 1;
 	i = ft_strlen(s);
 	if (f_type[11] == 0 && *s == '0' && i == 1)
@@ -17,11 +28,7 @@ int		put_converted_num(char *s, int *f_type, char conv)
 	}
 	while ((f_type[11]--) > 0)
 		ft_putchar('0');
-/*	if (*s == '0' && i == 1 && conv == 'p')
-	{
-		return (display_nil() - 1);
-	}
-*/	while (i--)
+	while (i--)
 	{
 		ft_putchar(s[i]);
 	}
@@ -71,7 +78,7 @@ char	*d_to_x(uintmax_t dig)
 	return (str);
 }
 
-char	*d_to_X(uintmax_t dig)
+char	*d_to_lx(uintmax_t dig)
 {
 	char		*str;
 	int			i;

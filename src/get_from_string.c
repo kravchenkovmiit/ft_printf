@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_from_string.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:43:29 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:56:39 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 /*
@@ -19,7 +31,7 @@
 ** *_prec	- 13
 */
 
-int		check_flags(char *conv, char *flags, int *f_type, char *str)
+int		check_flags(char *conv, char *flags, int *f_t, char *str)
 {
 	int	i;
 	int	k;
@@ -30,23 +42,22 @@ int		check_flags(char *conv, char *flags, int *f_type, char *str)
 	{
 		while (k < 5 && str[i] != flags[k])
 			k++;
-		if (str[i] == flags[k] && str[i] != '\0' && (f_type[k] = 1) && (k = 0) == 0)
+		if (is_flag(str[i], flags[k], f_t, &k))
 			i++;
 		else if (ft_isdigit(str[i]))
-			i += get_width(str + i, f_type, &k);
+			i += get_width(str + i, f_t, &k);
 		else if (str[i] == '.' && (k = 0) == 0)
-			i += get_precision(str + i + 1, f_type, &k);
+			i += get_precision(str + i + 1, f_t, &k);
 		else if (str[i] == '*' && (k = 0) == 0 && (++i))
-			f_type[12] = 1;
+			f_t[12] = 1;
 		else if (str[i] == 'l' || str[i] == 'h' || str[i] == 'L')
-			i += get_l_type(f_type, str + i, &k);
+			i += get_l_type(f_t, str + i, &k);
 		else if (!get_conversion(str[i], conv))
 			break ;
 		else
 			return (-1);
 	}
-	check_wildcard(f_type);
-	return (i);
+	return (check_wildcard(f_t, i));
 }
 
 int		get_conversion(char s, char *conv)

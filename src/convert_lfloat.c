@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   convert_lfloat.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:42:11 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:32:48 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 t_lfloat	*get_lfdb(long double d)
@@ -33,7 +45,7 @@ static char	*handle_lmantissa_if_e_less_zero(t_lfloat *fdb)
 {
 	char	*res;
 
-	if(!(res = ft_joinstr_pf(fdb->mantissa, '0', -(fdb->exp))))
+	if (!(res = ft_joinstr_pf(fdb->mantissa, '0', -(fdb->exp))))
 		return (NULL);
 	res[1] = '.';
 	res[-(fdb->exp) + 1] = '1';
@@ -47,7 +59,7 @@ static char	*handle_lmantissa_if_e_less_zero(t_lfloat *fdb)
 char		*handle_lmantissa(t_lfloat *fdb)
 {
 	char	*res;
-	int	 l;
+	int		l;
 
 	if (fdb->sign == 0 && fdb->exp == -32767 && !ft_strcmp(fdb->mantissa, "1."))
 	{

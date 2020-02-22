@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:42:32 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 15:42:32 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 int		display_nbr(intmax_t n, int *f_type, int f)
@@ -61,10 +73,4 @@ void	display_float(const char *s, int len, int *f_t, int neg)
 		ft_putchar('0');
 	while (0 < wdth-- && f_t[2])
 		ft_putchar(c);
-}
-
-int		display_nil(void)
-{
-	write(1, "(nil)", 5);
-	return (5);
 }

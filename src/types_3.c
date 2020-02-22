@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   types_3.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:45:09 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:17:45 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 int			len(intmax_t num)
@@ -41,7 +53,7 @@ int			d_type(va_list args, int *f_type)
 {
 	intmax_t	d;
 	int			sz;
-	int 		neg;
+	int			neg;
 
 	neg = 0;
 	d = get_nbr(args, f_type);
@@ -72,11 +84,11 @@ static int	ignor_flags(int *f_type)
 	return (0);
 }
 
-int		u_type(va_list args, int *f_type)
+int			u_type(va_list args, int *f_type)
 {
 	uintmax_t	d;
 	int			sz;
-	int 		neg;
+	int			neg;
 
 	neg = ignor_flags(f_type);
 	if (f_type[9])

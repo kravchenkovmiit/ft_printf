@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 18:29:08 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/11 19:16:41 by hvalenci         ###   ########.fr       */
+/*   Updated: 2020/02/21 16:38:06 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*res;
 	unsigned char	*s;
-	size_t		i;
+	size_t			i;
 
 	i = 0;
 	if (dst == NULL && src == NULL)

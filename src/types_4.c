@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   types_4.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/21 15:45:52 by hvalenci          #+#    #+#             */
+/*   Updated: 2020/02/21 16:05:53 by hvalenci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 int			len_ul(uintmax_t num)
@@ -57,7 +69,7 @@ int			ul_type(va_list args, int *f_type)
 {
 	uintmax_t	d;
 	int			sz;
-	int 		neg;
+	int			neg;
 
 	neg = 0;
 	d = get_nbr_un(args, f_type);
